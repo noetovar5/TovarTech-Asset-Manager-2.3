@@ -4,6 +4,10 @@ GitHub-ready **source and build kit** for the ASP.NET Core Razor Pages asset man
 
 ## 1. Software required on a NEW Windows build computer
 
+
+<img width="1868" height="892" alt="TovarTech Asset Manager Web — Version 2 3 0" src="https://github.com/user-attachments/assets/a4a7f446-18bc-4efd-a8f8-49b6107a0525" />
+
+
 - Windows 11 or supported Windows Server, x64; PowerShell 5.1 or later.
 - **.NET 10 SDK (x64)** (not merely the runtime): https://dotnet.microsoft.com/download/dotnet/10.0
 - **WiX Toolset CLI** via .NET global tool: `dotnet tool install --global wix` (if already installed: `dotnet tool update --global wix`). This project uses WiX v4+ schema and has been built with WiX 7. `wix --version` verifies installation.
