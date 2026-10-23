@@ -1,0 +1,136 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+
+  <Package
+      Name="TovarTech Asset Manager Web"
+      Manufacturer="TovarTech"
+      Version="2.3.0"
+      UpgradeCode="5e0d9f2b-6b5a-4e71-9d61-9c6a2d86d7ac"
+      Scope="perMachine">
+
+    <MajorUpgrade
+        DowngradeErrorMessage="A newer version is already installed." />
+
+    <MediaTemplate EmbedCab="yes" />
+
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory
+          Id="INSTALLFOLDER"
+          Name="TovarTech Asset Manager Web" />
+    </StandardDirectory>
+
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_3B8B91C75627BEE566DCB88F" Name="cs" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_959A45D44E6FCF58361ED004" Name="de" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_C0BC1E08F9743B2D50D5F160" Name="es" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_67AD8F41A7BB0A18C45F3EFD" Name="fr" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_2AD8A7049D7C5511AC254F5F" Name="it" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_3702FC1866630796050C50E9" Name="ja" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_1FDBC74CCFD68D0714AE539C" Name="ko" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_3485639FAF1591F3C16F2951" Name="pl" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_1B73C3C06B6E69A67886A77E" Name="pt-BR" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_ED5AD332C106043712705210" Name="ru" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_7817BB812E82168BD48FE1EA" Name="tr" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_D6C5E3B8683F5F0A1AE71655" Name="wwwroot" /></DirectoryRef>
+<DirectoryRef Id="DIR_D6C5E3B8683F5F0A1AE71655"><Directory Id="DIR_C9F159C5EDE081E4BB55487E" Name="css" /></DirectoryRef>
+<DirectoryRef Id="DIR_D6C5E3B8683F5F0A1AE71655"><Directory Id="DIR_B49C5F16376EF7DCEEC28198" Name="images" /></DirectoryRef>
+<DirectoryRef Id="DIR_D6C5E3B8683F5F0A1AE71655"><Directory Id="DIR_6F5403208FD7C524E3A66297" Name="js" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_D4A32CE6781B6DCE587E0887" Name="zh-Hans" /></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Directory Id="DIR_C7CD3509327A1B61138FDEEC" Name="zh-Hant" /></DirectoryRef>
+
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_D3CEFFCFF98E755128623FCB" Guid="ea0ed671-9992-0d22-55f9-5ab6e48e1fa0"><File Id="FIL_D3CEFFCFF98E755128623FCB" Name="appsettings.json" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\appsettings.json" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_3B8B91C75627BEE566DCB88F"><Component Id="CMP_1E3A969B288C628882CF0396" Guid="b6d71395-5cf2-a3c1-360f-0602b04684d2"><File Id="FIL_1E3A969B288C628882CF0396" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\cs\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_959A45D44E6FCF58361ED004"><Component Id="CMP_3BB1D12470AB324D8B96CC99" Guid="85cfa0bd-fab6-4955-092f-06e93f02bfa4"><File Id="FIL_3BB1D12470AB324D8B96CC99" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\de\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_C0BC1E08F9743B2D50D5F160"><Component Id="CMP_10A0D0C27B769092A79B1D86" Guid="502cb7d7-18bb-4792-5c69-bb4fc8ee90af"><File Id="FIL_10A0D0C27B769092A79B1D86" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\es\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_67AD8F41A7BB0A18C45F3EFD"><Component Id="CMP_AA0E88B6A921D4AB36DE5884" Guid="c4b970c8-4e61-99a3-08f3-ac0779d669db"><File Id="FIL_AA0E88B6A921D4AB36DE5884" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\fr\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_2AD8A7049D7C5511AC254F5F"><Component Id="CMP_E0E72D731375AC767FF19BEC" Guid="ff7dfab5-f3f7-eaab-b8d5-de6b968d74fe"><File Id="FIL_E0E72D731375AC767FF19BEC" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\it\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_3702FC1866630796050C50E9"><Component Id="CMP_ADCBCB470560C46ABE5EAB0E" Guid="f73e5237-008d-53f1-8d1d-a0d6abaacf4c"><File Id="FIL_ADCBCB470560C46ABE5EAB0E" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\ja\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_1FDBC74CCFD68D0714AE539C"><Component Id="CMP_6C71D07139057B3E1CCC2BF5" Guid="b2c4bf28-3922-83c5-2895-fb1eef501636"><File Id="FIL_6C71D07139057B3E1CCC2BF5" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\ko\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_B1F2002C7584F74986FC1E0A" Guid="7f16c47e-8a78-1151-ff09-f1d90fde25a1"><File Id="FIL_B1F2002C7584F74986FC1E0A" Name="Microsoft.Bcl.Cryptography.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.Bcl.Cryptography.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_08737534CC4C46B965A318D6" Guid="dbee0426-8e20-1116-15be-f17e0a960f99"><File Id="FIL_08737534CC4C46B965A318D6" Name="Microsoft.Data.SqlClient.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.Data.SqlClient.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_79E3FCE9C08051809747937B" Guid="2accda29-ec95-288c-8c41-34f72cbbb421"><File Id="FIL_79E3FCE9C08051809747937B" Name="Microsoft.Data.SqlClient.Extensions.Abstractions.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.Data.SqlClient.Extensions.Abstractions.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_976C76228A49A1EC49513638" Guid="74a9ed1c-6147-0348-5165-0b974156d2a3"><File Id="FIL_976C76228A49A1EC49513638" Name="Microsoft.Data.SqlClient.Internal.Logging.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.Data.SqlClient.Internal.Logging.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_30BC85041A05B6AD24969610" Guid="54e4534b-ed57-8150-b712-bce1f14a75e1"><File Id="FIL_30BC85041A05B6AD24969610" Name="Microsoft.Data.SqlClient.SNI.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.Data.SqlClient.SNI.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_776F0D1C09CD528B93C5336E" Guid="5cdcb5fe-5d60-9696-8395-4ea4d5c14dec"><File Id="FIL_776F0D1C09CD528B93C5336E" Name="Microsoft.IdentityModel.Abstractions.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.IdentityModel.Abstractions.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_BDE9FADD492601FDCABCE53B" Guid="4360a079-8168-0da0-14b6-d751049ecb71"><File Id="FIL_BDE9FADD492601FDCABCE53B" Name="Microsoft.IdentityModel.JsonWebTokens.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.IdentityModel.JsonWebTokens.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_7D7EFE968FA22A144F5234CC" Guid="3e863525-edc1-b4a9-88f5-a9efb9ae0cb8"><File Id="FIL_7D7EFE968FA22A144F5234CC" Name="Microsoft.IdentityModel.Logging.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.IdentityModel.Logging.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_73424A35F6D099509D0FA800" Guid="5fd3bc29-a75c-d34a-5cf7-9143c4d8c9f3"><File Id="FIL_73424A35F6D099509D0FA800" Name="Microsoft.IdentityModel.Protocols.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.IdentityModel.Protocols.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_82EAB1D9CEEC1CD324BB0E69" Guid="4862c43a-209e-1431-f22b-6cec63e4a60b"><File Id="FIL_82EAB1D9CEEC1CD324BB0E69" Name="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_7FD6FBCF2B1C466FF4C95D1C" Guid="c1d9e0b3-211a-c807-b34b-b08075bb1c3d"><File Id="FIL_7FD6FBCF2B1C466FF4C95D1C" Name="Microsoft.IdentityModel.Tokens.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.IdentityModel.Tokens.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_8C40B948CC0470F1054F40F6" Guid="99b2ac31-4f64-e619-f8d5-8acf8027bf84"><File Id="FIL_8C40B948CC0470F1054F40F6" Name="Microsoft.SqlServer.Server.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\Microsoft.SqlServer.Server.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_3485639FAF1591F3C16F2951"><Component Id="CMP_DEB686734193FA194699E65E" Guid="3fff27bd-1180-8fb2-7c69-58dc862b2ef6"><File Id="FIL_DEB686734193FA194699E65E" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\pl\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_1B73C3C06B6E69A67886A77E"><Component Id="CMP_41EB9090DFD75CC8E087C89F" Guid="8ad9e064-0931-e494-95b6-b02f6f01ae71"><File Id="FIL_41EB9090DFD75CC8E087C89F" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\pt-BR\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_ED5AD332C106043712705210"><Component Id="CMP_CCFBAF89C7BF4C138A9FF0B4" Guid="dc082a79-8773-cc48-08e3-b7e7a8b5dc27"><File Id="FIL_CCFBAF89C7BF4C138A9FF0B4" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\ru\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_6D49AFD971992AAFEE662D06" Guid="7867a12e-3201-d45a-cb4a-4fd55cab734a"><File Id="FIL_6D49AFD971992AAFEE662D06" Name="System.Configuration.ConfigurationManager.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\System.Configuration.ConfigurationManager.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_686C3AF270413674C7C3FE7D" Guid="e6181145-2afa-7360-6c77-09574eb64977"><File Id="FIL_686C3AF270413674C7C3FE7D" Name="System.IdentityModel.Tokens.Jwt.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\System.IdentityModel.Tokens.Jwt.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_82E04C944A736E80B1F721F4" Guid="98f6dcd4-58a0-7fcf-4c43-61505bba49b4"><File Id="FIL_82E04C944A736E80B1F721F4" Name="System.Security.Cryptography.ProtectedData.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\System.Security.Cryptography.ProtectedData.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_C2C4D446CCE2CF15D9E622F2" Guid="d35b8c5b-1283-028a-9d09-1efcc083f300"><File Id="FIL_C2C4D446CCE2CF15D9E622F2" Name="TovarTech.AssetManager.Web.deps.json" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\TovarTech.AssetManager.Web.deps.json" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_307DD9EE480B7D4E162BC726" Guid="1fcc1863-8a0e-71f3-6a81-9299e4492372"><File Id="FIL_307DD9EE480B7D4E162BC726" Name="TovarTech.AssetManager.Web.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\TovarTech.AssetManager.Web.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_7690E55F8279624BFBFD65F6" Guid="b46548d4-b58e-64cd-6313-5231fe08027a"><File Id="FIL_7690E55F8279624BFBFD65F6" Name="TovarTech.AssetManager.Web.exe" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\TovarTech.AssetManager.Web.exe" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_D2B02521D24553BB652FB99E" Guid="e2734d16-bb55-445d-5f01-f16a85ad2451"><File Id="FIL_D2B02521D24553BB652FB99E" Name="TovarTech.AssetManager.Web.pdb" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\TovarTech.AssetManager.Web.pdb" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_C3456120C7374FF6440A9874" Guid="c6e3fdac-df20-0a12-41be-de566fe285d3"><File Id="FIL_C3456120C7374FF6440A9874" Name="TovarTech.AssetManager.Web.runtimeconfig.json" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\TovarTech.AssetManager.Web.runtimeconfig.json" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_E78BE1AA79533333071CAB97" Guid="40e20cbb-89d5-03cb-da87-5c1a46d5cd11"><File Id="FIL_E78BE1AA79533333071CAB97" Name="TovarTech.AssetManager.Web.staticwebassets.endpoints.json" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\TovarTech.AssetManager.Web.staticwebassets.endpoints.json" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_7817BB812E82168BD48FE1EA"><Component Id="CMP_96B95894157C7BAE9CC0B3AF" Guid="443f3ebe-3f6d-f3de-f565-4ad07e8641df"><File Id="FIL_96B95894157C7BAE9CC0B3AF" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\tr\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="INSTALLFOLDER"><Component Id="CMP_7AE1D6DAC722C00A6980A137" Guid="f95a603a-3776-49fb-871c-3d95ddb480c7"><File Id="FIL_7AE1D6DAC722C00A6980A137" Name="web.config" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\web.config" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_C9F159C5EDE081E4BB55487E"><Component Id="CMP_A3395C619D2932C6A78CDD9A" Guid="a2b76319-4877-4bf8-9137-bb49a16fb0fe"><File Id="FIL_A3395C619D2932C6A78CDD9A" Name="site.css" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\wwwroot\css\site.css" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_C9F159C5EDE081E4BB55487E"><Component Id="CMP_B2F6B43E81EF6A5348B34508" Guid="9c61f2fe-4de9-65e6-8ea0-0e2515886d27"><File Id="FIL_B2F6B43E81EF6A5348B34508" Name="site.css.br" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\wwwroot\css\site.css.br" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_C9F159C5EDE081E4BB55487E"><Component Id="CMP_F6453990FFE79040EA293D3D" Guid="bcb70d56-dec1-fe4f-2e11-c2dfbee7750b"><File Id="FIL_F6453990FFE79040EA293D3D" Name="site.css.gz" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\wwwroot\css\site.css.gz" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_B49C5F16376EF7DCEEC28198"><Component Id="CMP_DBE160870CC16EB1DE18151D" Guid="9c36a183-fd6c-3dda-5dfb-65a20b551f88"><File Id="FIL_DBE160870CC16EB1DE18151D" Name="tovartech-logo.png" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\wwwroot\images\tovartech-logo.png" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_6F5403208FD7C524E3A66297"><Component Id="CMP_954B714A1051C38056772A8A" Guid="9cdf4c27-5d9e-f03e-5a38-1a7429e5f0ed"><File Id="FIL_954B714A1051C38056772A8A" Name="dashboard.js" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\wwwroot\js\dashboard.js" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_6F5403208FD7C524E3A66297"><Component Id="CMP_B1092E0FB7EB8D31EA701327" Guid="7f833027-2ab6-d874-8174-405ee06e04c7"><File Id="FIL_B1092E0FB7EB8D31EA701327" Name="dashboard.js.br" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\wwwroot\js\dashboard.js.br" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_6F5403208FD7C524E3A66297"><Component Id="CMP_03A4B444146C97CAA134034A" Guid="adaba039-65f6-d6fb-0f86-a56714725a15"><File Id="FIL_03A4B444146C97CAA134034A" Name="dashboard.js.gz" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\wwwroot\js\dashboard.js.gz" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_D4A32CE6781B6DCE587E0887"><Component Id="CMP_B35851E62713764845DDB9BD" Guid="e9482beb-9b27-3ab0-38b7-0858226b0cf5"><File Id="FIL_B35851E62713764845DDB9BD" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\zh-Hans\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+<DirectoryRef Id="DIR_C7CD3509327A1B61138FDEEC"><Component Id="CMP_24956A9A4693EC1C42A1AF8B" Guid="98e76762-fdc4-bf27-25f4-b120e353625e"><File Id="FIL_24956A9A4693EC1C42A1AF8B" Name="Microsoft.Data.SqlClient.resources.dll" Source="C:\Users\noe\Downloads\TovarTech_Asset_Manager_2_3_Source_Build_Only\publish\zh-Hant\Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" /></Component></DirectoryRef>
+
+    <Feature
+        Id="MainFeature"
+        Title="TovarTech Asset Manager Web"
+        Level="1">
+
+<ComponentRef Id="CMP_D3CEFFCFF98E755128623FCB" />
+<ComponentRef Id="CMP_1E3A969B288C628882CF0396" />
+<ComponentRef Id="CMP_3BB1D12470AB324D8B96CC99" />
+<ComponentRef Id="CMP_10A0D0C27B769092A79B1D86" />
+<ComponentRef Id="CMP_AA0E88B6A921D4AB36DE5884" />
+<ComponentRef Id="CMP_E0E72D731375AC767FF19BEC" />
+<ComponentRef Id="CMP_ADCBCB470560C46ABE5EAB0E" />
+<ComponentRef Id="CMP_6C71D07139057B3E1CCC2BF5" />
+<ComponentRef Id="CMP_B1F2002C7584F74986FC1E0A" />
+<ComponentRef Id="CMP_08737534CC4C46B965A318D6" />
+<ComponentRef Id="CMP_79E3FCE9C08051809747937B" />
+<ComponentRef Id="CMP_976C76228A49A1EC49513638" />
+<ComponentRef Id="CMP_30BC85041A05B6AD24969610" />
+<ComponentRef Id="CMP_776F0D1C09CD528B93C5336E" />
+<ComponentRef Id="CMP_BDE9FADD492601FDCABCE53B" />
+<ComponentRef Id="CMP_7D7EFE968FA22A144F5234CC" />
+<ComponentRef Id="CMP_73424A35F6D099509D0FA800" />
+<ComponentRef Id="CMP_82EAB1D9CEEC1CD324BB0E69" />
+<ComponentRef Id="CMP_7FD6FBCF2B1C466FF4C95D1C" />
+<ComponentRef Id="CMP_8C40B948CC0470F1054F40F6" />
+<ComponentRef Id="CMP_DEB686734193FA194699E65E" />
+<ComponentRef Id="CMP_41EB9090DFD75CC8E087C89F" />
+<ComponentRef Id="CMP_CCFBAF89C7BF4C138A9FF0B4" />
+<ComponentRef Id="CMP_6D49AFD971992AAFEE662D06" />
+<ComponentRef Id="CMP_686C3AF270413674C7C3FE7D" />
+<ComponentRef Id="CMP_82E04C944A736E80B1F721F4" />
+<ComponentRef Id="CMP_C2C4D446CCE2CF15D9E622F2" />
+<ComponentRef Id="CMP_307DD9EE480B7D4E162BC726" />
+<ComponentRef Id="CMP_7690E55F8279624BFBFD65F6" />
+<ComponentRef Id="CMP_D2B02521D24553BB652FB99E" />
+<ComponentRef Id="CMP_C3456120C7374FF6440A9874" />
+<ComponentRef Id="CMP_E78BE1AA79533333071CAB97" />
+<ComponentRef Id="CMP_96B95894157C7BAE9CC0B3AF" />
+<ComponentRef Id="CMP_7AE1D6DAC722C00A6980A137" />
+<ComponentRef Id="CMP_A3395C619D2932C6A78CDD9A" />
+<ComponentRef Id="CMP_B2F6B43E81EF6A5348B34508" />
+<ComponentRef Id="CMP_F6453990FFE79040EA293D3D" />
+<ComponentRef Id="CMP_DBE160870CC16EB1DE18151D" />
+<ComponentRef Id="CMP_954B714A1051C38056772A8A" />
+<ComponentRef Id="CMP_B1092E0FB7EB8D31EA701327" />
+<ComponentRef Id="CMP_03A4B444146C97CAA134034A" />
+<ComponentRef Id="CMP_B35851E62713764845DDB9BD" />
+<ComponentRef Id="CMP_24956A9A4693EC1C42A1AF8B" />
+
+    </Feature>
+
+  </Package>
+
+</Wix>

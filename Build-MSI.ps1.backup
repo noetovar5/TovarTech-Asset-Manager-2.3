@@ -1,0 +1,76 @@
+[CmdletBinding()]
+param()
+$ErrorActionPreference='Stop'
+$root=$PSScriptRoot
+$project=Join-Path $root 'TovarTech.AssetManager.Web\TovarTech.AssetManager.Web.csproj'
+$publish=Join-Path $root 'publish'
+$output=Join-Path $root 'output'
+New-Item -ItemType Directory -Force -Path $publish,$output | Out-Null
+if (-not (Get-Command dotnet -ErrorAction SilentlyContinue)) {throw 'Install .NET 10 SDK.'}
+& dotnet publish $project -c Release -r win-x64 --self-contained false -o $publish
+if ($LASTEXITCODE -ne 0) {throw 'dotnet publish failed'}
+$wix=Get-Command wix -ErrorAction SilentlyContinue
+if (-not $wix) {
+ Write-Host 'WiX not found. Installing wix .NET tool to user profile...'
+ & dotnet tool install --global wix
+ if ($LASTEXITCODE -ne 0) {throw 'WiX installation failed. Install WiX Toolset manually.'}
+ $env:PATH += ";$env:USERPROFILE\.dotnet\tools"
+}
+if (-not (Get-Command wix -ErrorAction SilentlyContinue)) {throw 'WiX executable not found. Reopen PowerShell and retry.'}
+# Generate one component per published file, with stable deterministic GUIDs.
+Add-Type -AssemblyName System.Security
+function StableGuid([string]$text) {
+ $bytes=[System.Text.Encoding]::UTF8.GetBytes($text.ToLowerInvariant())
+ $hash=([System.Security.Cryptography.MD5]::Create()).ComputeHash($bytes)
+ return New-Object Guid (,$hash)
+}
+function XmlEscape([string]$s) {return [System.Security.SecurityElement]::Escape($s)}
+$files=Get-ChildItem $publish -File -Recurse | Sort-Object FullName
+if (-not $files) {throw 'Publish folder is empty'}
+# Define each directory exactly once, then reference it from file components.
+# The previous generator repeated <Directory> definitions for every file.
+$directories=New-Object System.Collections.Generic.List[string]
+$seenDirs=New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
+$components=New-Object System.Collections.Generic.List[string]
+$refs=New-Object System.Collections.Generic.List[string]
+$i=0
+foreach ($file in $files) {
+ $relative=$file.FullName.Substring($publish.Length+1)
+ $segments=$relative -split '[\/]'
+ $parent='INSTALLFOLDER'
+ $parts=New-Object System.Collections.Generic.List[string]
+ for($j=0;$j -lt $segments.Length-1;$j++) {
+   $seg=$segments[$j]
+   $parts.Add($seg)
+   $dirPath=$parts -join '/'
+   $id='D'+([BitConverter]::ToString(([System.Security.Cryptography.MD5]::Create()).ComputeHash([Text.Encoding]::UTF8.GetBytes($dirPath.ToLowerInvariant()))).Replace('-','').Substring(0,20))
+   if ($seenDirs.Add($dirPath)) {
+     $directories.Add("<DirectoryRef Id=`"$parent`"><Directory Id=`"$id`" Name=`"$(XmlEscape $seg)`" /></DirectoryRef>")
+   }
+   $parent=$id
+ }
+ $cid="FileComponent$i"; $fid="PublishedFile$i"; $guid=StableGuid("TovarTechAssetManager2.3/$relative")
+ $components.Add("<DirectoryRef Id=`"$parent`"><Component Id=`"$cid`" Guid=`"$guid`"><File Id=`"$fid`" Source=`"$(XmlEscape $file.FullName)`" KeyPath=`"yes`" /></Component></DirectoryRef>")
+ $refs.Add("<ComponentRef Id=`"$cid`" />")
+ $i++
+}
+# A stable product UpgradeCode allows future 2.x MSI major upgrades. Different from the WinForms MSI.
+$wxs=@"
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+ <Package Name="TovarTech Asset Manager Web" Manufacturer="TovarTech" Version="2.3.0" UpgradeCode="5e0d9f2b-6b5a-4e71-9d61-9c6a2d86d7ac" Scope="perMachine">
+  <MajorUpgrade DowngradeErrorMessage="A newer version is already installed." />
+  <MediaTemplate EmbedCab="yes" />
+  <StandardDirectory Id="ProgramFiles64Folder"><Directory Id="INSTALLFOLDER" Name="TovarTech Asset Manager Web" /></StandardDirectory>
+  $($directories -join "`n")
+  $($components -join "`n")
+  <Feature Id="MainFeature" Title="TovarTech Asset Manager Web" Level="1">$($refs -join "`n")</Feature>
+ </Package>
+</Wix>
+"@
+$wxsPath=Join-Path $root 'installer.generated.wxs'
+Set-Content -Path $wxsPath -Value $wxs -Encoding UTF8
+$msi=Join-Path $output 'TovarTech_Asset_Manager_Web_2.3.0_x64.msi'
+& wix build $wxsPath -arch x64 -out $msi
+if ($LASTEXITCODE -ne 0) {throw 'WiX build failed; review errors above.'}
+Write-Host "MSI built: $msi" -ForegroundColor Green
+Write-Host 'IMPORTANT: This MSI stages application files. IIS deployment is a separate administrator step (see README).'
