@@ -137,3 +137,10 @@ Adjust chapter timestamps after recording; these are planning estimates, not tim
 ## 8. Provenance and limitations
 
 The included source is based on the **2.3 source-only ZIP** available in this conversation, not a live export of the user's current Windows project folder. Its package references were updated to match the versions the user confirmed (`7.1.1` and `10.0.13`), and the successful directory-preserving build script was reconstructed from the conversation. If any other edits were made locally after that ZIP was created, copy/merge them before publishing to GitHub. No real database, SQL backup, server-specific secrets, compiled MSI, or verified IIS deployment script is included.
+
+
+
+https://chatgpt.com/share/6adab56c-49bc-83e9-9c03-3fa6879f5e4f
+
+
+
